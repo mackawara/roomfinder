@@ -1,13 +1,13 @@
 {
-  "name": "todo-mvc-auth-local",
+  "name": "roomfinder",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "description": "The solution to the problem of housing, poweered by AI",
+  "main": "app.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "mac kawara",
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.0.1",
@@ -24,5 +24,19 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "validator": "^13.6.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mackawara/roomfinder.git"
+  },
+  "keywords": [
+    "findroom",
+    "rent",
+    "aprtmentfinder"
+  ],
+  "bugs": {
+    "url": "https://github.com/mackawara/roomfinder/issues"
+  },
+  "homepage": "https://github.com/mackawara/roomfinder#readme"
 }
