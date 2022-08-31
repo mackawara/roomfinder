@@ -1,5 +1,9 @@
 module.exports = {
   getIndex: (req, res) => {
-    res.render("index.ejs");
+    console.log("home");
+    res.render("todos.ejs");
   },
+  getListings:(req,res)=>{
+    res.render("listings.ejs")
+  }
 };
