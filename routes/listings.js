@@ -4,7 +4,7 @@ const listingsController = require("../controllers/listings");
 const saveListing = require("../models/listings");
 
 //router.get('/', homeController.getHome)
-//router.get("/listings", homeController.getListings);
+router.get("/", listingsController.getListings);
 router.get(`/add`, listingsController.getAddListings);
-router.post(`/add`, saveListing, listingsController.addListing);
+router.post(`/add`, listingsController.addListing);
 module.exports = router;
