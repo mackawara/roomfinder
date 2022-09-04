@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const ListingSchema = new mongoose.Schema({
   range: {
     type: String,
-    required: true,
+    required: false,
   },
   rooms: {
     type: String,
@@ -14,7 +14,7 @@ const ListingSchema = new mongoose.Schema({
   },
   description: {
     type: String,
-    required: true,
+    required: false,
   },
 
   location: {
