@@ -1,0 +1,62 @@
+<%- include ("../partials/head") %> <%-include("../partials/header")%>
+<div class="container m-4 row">
+  <div class="column sm-2 border p-4 m-4 rounded-1">
+    <form action="search" method="post">
+      <div class="mb-3">
+        <label for="" class="form-label">Location</label>
+        <input
+          type="text"
+          name=""
+          id=""
+          class="form-control"
+          placeholder=""
+          aria-describedby="helpId"
+        />
+        <small id="helpId" class="text-muted">Suburb /Township</small>
+      </div>
+
+      <div class="mb-3">
+        <label for="" class="form-label">City</label>
+        <input
+          type="text"
+          name="city"
+          id="city"
+          class="form-control"
+          placeholder=""
+          aria-describedby="helpId"
+        />
+        <small id="helpId" class="text-muted">City where you want to liv</small>
+      </div>
+      <div class="mb-3">
+        <label for="" class="form-label">Rooms</label>
+        <input
+          type="text"
+          name="rooms"
+          id="rooms"
+          class="form-control"
+          placeholder=""
+          aria-describedby="helpId"
+        />
+        <small id="helpId" class="text-muted">How many rooms do you need</small>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  <div class="column sm-2 border p-4 m-4 rounded-1">
+    .
+    <div class="p-5 mb-4 bg-light rounded-3">
+      <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">Find a Room</h1>
+        <p class="col-md-8 fs-4">
+          If ever there is a room for you, , we will find it for you
+        </p>
+
+        <a href="listings/" class="btn btn-primary btn-lg" type="button"
+          >Click here to Browse Listings</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+<%-include("../partials/foot") %>
