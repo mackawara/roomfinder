@@ -69,6 +69,7 @@ const ListingModel = require("../models/listings");
     const listings =await ListingModel.find({
       location: req.body.location,
       city: req.body.city,
+      rooms:req.body.rooms
     });
     console.log(listings)
     console.log(req.body.location, req.body.city)
