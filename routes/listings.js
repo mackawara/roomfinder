@@ -7,4 +7,6 @@ const saveListing = require("../models/listings");
 router.get("/", listingsController.getListings);
 router.get(`/add`, listingsController.getAddListings);
 router.post(`/add`, listingsController.addListing);
+router.get(`/search`, listingsController.getSearchListings);
+router.post(`/search`, listingsController.searchListings);
 module.exports = router;
