@@ -1,7 +1,7 @@
 module.exports = {
   getIndex: (req, res) => {
     console.log("home");
-    res.render("todos.ejs");
+    res.render("home.ejs");
   },
   getListings:(req,res)=>{
     res.render("listings.ejs")
