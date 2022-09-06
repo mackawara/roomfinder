@@ -1,20 +1,51 @@
 <%- include ("../partials/head") %> <%-include("../partials/header")%>
-<div class="row container-fluid justify-content-center">
+<div id="banner-wrapper">
+    <div id="banner" class="box container">
+      <div class="row">
+        <div class="col-7 col-12-medium">
+          <h2>Hi. This is FaR</h2>
+          <p>Bringing together property owners and tenants</p>
+        </div>
+        <div class="col-5 col-12-medium">
+          <ul>
+            <li>
+              <a
+                href="#"
+                class="button large icon solid fa-arrow-circle-right"
+                >Add your property</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="button alt large icon solid fa-question-circle"
+                >Find a room</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main-wrapper">
 
-    <% listings.forEach(listing => { %>
-      
-        <div class="card m-2 d-flex justify-content-center column lg-6 md-4 sm-1 " style="width: 18rem">
-            <div class="card-body"  style="width: 18rem">
-                <h2 class="card-title"><%=listing.city%></h4>
-                    <img src=<%= listing.iji %>  alt="" class="card-mage-top">
-                    <p class="card-text"><%=listing.description%></p>
-                    <h6>No of rooms:<%= listing.rooms %> </h6>
-                    <p class="card-text">Price range: <%=listing.range%></p>
-                    <a href="" class="btn btn-primary">Contact PO</a>
+    <div class="row container-fluid justify-content-start">
 
-            </div>
-         </div>
-       
-       <% }) %>
-</div>
+        <% listings.forEach(listing => { %>
+          
+            <div class="card m-2 d-flex justify-content-start col-sm-12 col-md-4 col-lg-2 lg-6 md-4 sm-1 " style="width: 18rem">
+                <div class="card-body">
+                    <h2 class="card-title"><%=listing.city%></h4>
+                        <img src=<%= listing.iji %>  alt="" class="card-mage-top">
+                        <p class="card-text"><%=listing.description%></p>
+                        <h6>No of rooms:<%= listing.rooms %> </h6>
+                        <p class="card-text">Price range: <%=listing.range%></p>
+                        <a href="" class="btn btn-primary">Contact PO</a>
+    
+                </div>
+             </div>
+           
+           <% }) %>
+    </div>
+  </div>
 <%-include("../partials/foot") %>
