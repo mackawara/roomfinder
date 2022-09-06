@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"path": ".."
+	},
+	{
+		"path": "../../todo-list-express/.vscode"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "roomfinder"
+  }
+}
