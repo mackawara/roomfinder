@@ -27,9 +27,9 @@
       </div>
     </div>
   </div>
-  <div class="main-wrapper">
+  <div class="main-wrapper m-8 box-container">
 
-    <div class="row container-fluid justify-content-start">
+    <div class="row container-fluid m-4 justify-content-start">
 
         <% listings.forEach(listing => { %>
           
@@ -40,7 +40,7 @@
                         <p class="card-text"><%=listing.description%></p>
                         <h6>No of rooms:<%= listing.rooms %> </h6>
                         <p class="card-text">Price range: <%=listing.range%></p>
-                        <a href="" class="btn btn-primary">Contact PO</a>
+                        <a href="" class="btn btn-primary text-warning">Contact PO</a>
     
                 </div>
              </div>
