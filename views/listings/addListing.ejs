@@ -1,46 +1,52 @@
 <%- include ("../partials/head") %> <%-include("../partials/header")%>
 <body>
   <div class="m-4">
-    <form action="add" method="post">
-      <div class="mb-3">
-        <label for="" class="form-label">Location</label>
-        <input
-          type="text"
-          name="location"
-          id="location"
-          class="form-control"
-          placeholder=""
-          aria-describedby="helpId"
-        />
-        <small id="helpId" class="text-muted">Suburb /Township</small>
-      </div>
+    <div class="form-wrapper">
+      <form action="add" method="post">
+        <div class="mb-3">
+          <label for="" class="form-label">Location</label>
+          <input
+            type="text"
+            name="location"
+            id="location"
+            class="form-control"
+            placeholder=""
+            aria-describedby="helpId"
+          />
+          <small id="helpId" class="text-muted">Suburb /Township</small>
+        </div>
 
-      <div class="mb-3">
-        <label for="" class="form-label">City</label>
-        <input
-          type="text"
-          name="city"
-          id="city"
-          class="form-control"
-          placeholder=""
-          aria-describedby="helpId"
-        />
-        <small id="helpId" class="text-muted">City where you want to liv</small>
-      </div>
-      <div class="mb-3">
-        <label for="" class="form-label">Rooms</label>
-        <input
-          type="text"
-          name="rooms"
-          id="rooms"
-          class="form-control"
-          placeholder=""
-          aria-describedby="helpId"
-        />
-        <small id="helpId" class="text-muted">How many rooms do you need</small>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+        <div class="mb-3">
+          <label for="" class="form-label">City</label>
+          <input
+            type="text"
+            name="city"
+            id="city"
+            class="form-control"
+            placeholder=""
+            aria-describedby="helpId"
+          />
+          <small id="helpId" class="text-muted"
+            >City where you want to liv</small
+          >
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Rooms</label>
+          <input
+            type="text"
+            name="rooms"
+            id="rooms"
+            class="form-control"
+            placeholder=""
+            aria-describedby="helpId"
+          />
+          <small id="helpId" class="text-muted"
+            >How many rooms do you need</small
+          >
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
   </div>
   <%-include("../partials/foot") %>
 </body>
