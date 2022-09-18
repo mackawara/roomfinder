@@ -5,10 +5,11 @@
   width: 100%;
 }
 .form-wrapper form {
+  background-color: #fff;
   padding: 2%;
   width: 75%;
   border-radius: 10px;
-  border: 1px solid #444;
+  border: 1px solid #dee2e6;
 }
 /* media queries */
 @media screen and (max-width: 736px) {
