@@ -10,9 +10,9 @@ const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
 const todoRoutes = require("./routes/todos");
 const listingRoutes = require("./routes/listings");
-const path=require("path")
+const path = require("path");
 
-require("dotenv").config({ path: "./.env" });
+require("dotenv").config({ path: "./config/.env" });
 
 // Passport config
 require("./config/passport")(passport);
@@ -20,8 +20,8 @@ require("./config/passport")(passport);
 connectDB();
 
 app.set("view engine", "ejs");
-app.use(express.static(path.join(__dirname+"/public")));
-console.log(__dirname)
+app.use(express.static(path.join(__dirname + "/public")));
+console.log(__dirname);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(logger("dev"));
