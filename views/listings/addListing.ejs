@@ -2,7 +2,7 @@
 <body>
   <div class="m-4">
     <p class="paragraph-text m-4 text-center">
-      Please enter the details of what your intended rental will be like
+      Please enter the range of rentals per month
     </p>
     <div class="form-wrapper">
       <form action="add" method="post">
@@ -30,7 +30,7 @@
             aria-describedby="helpId"
           />
           <small id="helpId" class="text-muted"
-            >City where you want to liv</small
+            >City where the property is located</small
           >
         </div>
         <div class="mb-3">
@@ -44,7 +44,22 @@
             aria-describedby="helpId"
           />
           <small id="helpId" class="text-muted"
-            >How many rooms do you need</small
+            >How many rooms does your property have</small
+          >
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Rooms</label>
+          <input
+            accept="png,jpeg,jpg"
+            type="file"
+            name="rooms"
+            id="rooms"
+            class="form-control"
+            placeholder=""
+            aria-describedby="helpId"
+          />
+          <small id="helpId" class="text-muted"
+            >Accepted file formats png,jpeg,jpg</small
           >
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
