@@ -21,26 +21,21 @@ const ListingSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  type: {
+  pic: {
     type: String,
     required: false,
   },
-
-  fullAddress: {
+  cloudinaryId: {
     type: String,
-    required: false,
+    require: true,
   },
-  pic1: {
-    type: String,
-    required: false,
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
   },
-  pic2: {
-    type: String,
-    required: false,
-  },
-  gps: {
-    type: String,
-    required: false,
+  createdAt: {
+    type: Date,
+    default: Date.now,
   },
 });
 const ListingModel = mongoose.model("listing", ListingSchema);

@@ -1,6 +1,7 @@
 const saveListing = require("../models/listings");
 const ListingModel = require("../models/listings");
-
+const cloudinary=require("../middleware/cloudinary")
+const multer=require("../middleware/multer")
 (exports.getListings = async (req, res) => {
   console.log(req.user);
   try {
@@ -16,12 +17,9 @@ const ListingModel = require("../models/listings");
     res.render("listings/addListing.ejs");
   }),
   (exports.addListing = async (req, res, next) => {
-    const body = req.body;
-    console.log(req.body.rooms);
-    console.log(req.body.location);
-    // console.log(req.body.description);
-    console.log(req.body.city);
-
+    
+    
+    const result = await cloudinary.uploader.upload(req.file.path);
     const newListing = new ListingModel({
       location: body.location,
       range: body.range,
@@ -29,13 +27,29 @@ const ListingModel = require("../models/listings");
       description: body.description,
       city: body.city,
       range: body.range,
-      /* location: body.description,
-      fullAddress: body.fullAddress,
-      pic1: body.fullAddress,
-      pic2: body.pic2,
-      gps: body.gps, */
+      cloudinaryId: result.public_id,
+      image: result.secure_url,
+      
     });
 
+    createPost: async (req, res) => {
+      try {
+        // Upload image to cloudinary
+        const result = await cloudinary.uploader.upload(req.file.path);
+        console.log(result);
+        await Post.create({
+          title: req.body.title,
+          image: result.secure_url,
+          cloudinaryId: result.public_id,
+         
+          
+        });
+        console.log("Post has been added!");
+        res.redirect("/profile");
+      } catch (err) {
+        console.log(err);
+      }
+    },
     const searchExistingListing = async function () {
       console.log(`searchExisting listing is working`);
       const result = await ListingModel.find({
