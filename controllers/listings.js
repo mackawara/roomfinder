@@ -1,7 +1,8 @@
 const saveListing = require("../models/listings");
 const ListingModel = require("../models/listings");
-const cloudinary=require("../middleware/cloudinary")
-const multer=require("../middleware/multer")
+
+const cloudinary = require("../middleware/cloudinary");
+const multer = require("../middleware/multer");
 (exports.getListings = async (req, res) => {
   console.log(req.user);
   try {
@@ -17,40 +18,29 @@ const multer=require("../middleware/multer")
     res.render("listings/addListing.ejs");
   }),
   (exports.addListing = async (req, res, next) => {
-    
-    
-    const result = await cloudinary.uploader.upload(req.file.path);
-    const newListing = new ListingModel({
-      location: body.location,
-      range: body.range,
-      rooms: body.rooms,
-      description: body.description,
-      city: body.city,
-      range: body.range,
-      cloudinaryId: result.public_id,
-      image: result.secure_url,
-      
-    });
+    const body=req.body
+    let newListing;
+    console.log(req.body);
+    console.log(req.file.path);
+    try {
+      const result = await cloudinary.uploader.upload(req.file.path);
+      console.log(result);
+      newListing = new ListingModel({
+        location: body.location,
+        range: body.range,
+        rooms: body.rooms,
+        description: body.description,
+        city: body.city,
+        range: body.range,
+        cloudinaryId: result.public_id,
+        image: result.secure_url,
+      });
+    } catch (error) {
+      console.log(error);
+    }
 
-    createPost: async (req, res) => {
-      try {
-        // Upload image to cloudinary
-        const result = await cloudinary.uploader.upload(req.file.path);
-        console.log(result);
-        await Post.create({
-          title: req.body.title,
-          image: result.secure_url,
-          cloudinaryId: result.public_id,
-         
-          
-        });
-        console.log("Post has been added!");
-        res.redirect("/profile");
-      } catch (err) {
-        console.log(err);
-      }
-    },
     const searchExistingListing = async function () {
+      const body = req.body;
       console.log(`searchExisting listing is working`);
       const result = await ListingModel.find({
         description: body.description,
@@ -80,13 +70,13 @@ const multer=require("../middleware/multer")
     }
   }),
   (exports.searchListings = async (req, res) => {
-    const listings =await ListingModel.find({
+    const listings = await ListingModel.find({
       location: req.body.location,
       city: req.body.city,
-      rooms:req.body.rooms
+      rooms: req.body.rooms,
     });
-    console.log(listings)
-    console.log(req.body.location, req.body.city)
+    console.log(listings);
+    console.log(req.body.location, req.body.city);
     res.render("listings/listings.ejs", { listings: listings });
   }),
   (exports.getSearchListings = async (req, res) => {
