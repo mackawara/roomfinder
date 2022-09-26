@@ -21,7 +21,7 @@ const multer = require("../middleware/multer");
     const body=req.body
     let newListing;
     console.log(req.body);
-    console.log(req.file.path);
+    //console.log(req.file.path);
     try {
       const result = await cloudinary.uploader.upload(req.file.path);
       console.log(result);

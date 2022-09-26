@@ -21,9 +21,9 @@ const ListingSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  pic: {
+  image: {
     type: String,
-    required: false,
+    required: true,
   },
   cloudinaryId: {
     type: String,
