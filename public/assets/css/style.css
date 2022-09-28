@@ -38,10 +38,13 @@
   align-self: flex-end;
   background-color: #0090c5;
   color: #ffffff;
+  border: none;
 }
 .card-wrapper {
   display: flex;
   justify-content: space-around;
+  max-width: 100%;
+  margin: 0 auto;
 }
 /* media queries */
 @media screen and (max-width: 736px) {
