@@ -19,6 +19,26 @@
   width: 30%;
   margin-top: 2rem;
 }
+.card * {
+  padding: 0;
+}
+.card .row {
+  margin: 0;
+}
+.card .row * {
+  padding: 0;
+}
+.row .card {
+  padding: 0;
+}
+.card-button {
+  padding: 0;
+  border-radius: 0;
+  height: 2rem;
+  align-self: flex-end;
+  background-color: #0090c5;
+  color: #ffffff;
+}
 .card-wrapper {
   display: flex;
   justify-content: space-around;

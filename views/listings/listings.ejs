@@ -28,21 +28,25 @@
     </div>
   </div>
   <div class="spacer"></div>
-  <div class="main-wrapper box container ">
+  <div class="box container ">
 
     <div class="row card-wrapper  ">
 
         <% listings.forEach(listing => { %>
           
-            <div class="card text-center col-12-small " >
-                <div class="card-body">
-                    <h2 class="card-title"><%=listing.city%></h4>
-                        <img src=<%= listing.image %>  alt="" class="card-img-top">
-                        <p class="card-text"><%=listing.description%></p>
+            <div class="card col-12-small " >
+                <div class="card-body row">
+                   <div class="col-md-6 col-lg-12">
+                     <img src=<%= listing.image %>  alt="" class="card-img-top">
+                    </div> 
+                    <div class="col-md-6 col-lg-12">
+                        <h5 class="card-title"><%=listing.city%></h4>
                         <h6>No of rooms:<%= listing.rooms %> </h6>
                         <p class="card-text">Price range: <%=listing.range%></p>
-                        <a href="" class="btn btn-primary text-warning">Contact PO</a>
-    
+                        <p class="card-text"><%=listing.description%></p>
+                      </div>  
+                      <a href="" class="card-button btn btn-primary ">Contact PO</a>
+                       
                 </div>
              </div>
            
