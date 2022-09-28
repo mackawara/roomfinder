@@ -1,4 +1,3 @@
-
 .spacer {
   height: 3rem;
   width: 100%;
@@ -15,6 +14,14 @@
   width: 75%;
   border-radius: 10px;
   border: 1px solid #dee2e6;
+}
+.card {
+  width: 30%;
+  margin-top: 2rem;
+}
+.card-wrapper {
+  display: flex;
+  justify-content: space-around;
 }
 /* media queries */
 @media screen and (max-width: 736px) {
