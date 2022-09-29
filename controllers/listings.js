@@ -18,13 +18,19 @@ const multer = require("../middleware/multer");
     res.render("listings/addListing.ejs");
   }),
   (exports.addListing = async (req, res, next) => {
-    const body=req.body
+    const body = req.body;
     let newListing;
     console.log(req.body);
     //console.log(req.file.path);
     try {
       const result = await cloudinary.uploader.upload(req.file.path);
-      console.log(result);
+      const imageformatted = await cloudinary.url(req.file.path, {
+        height: 400,
+        width: 300,
+        crop: "scale",
+        class: "card-image-top",
+      });
+      console.log(imageformatted);
       newListing = new ListingModel({
         location: body.location,
         range: body.range,
